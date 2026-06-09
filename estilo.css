@@ -1,0 +1,1599 @@
+/* INICIO DA BARRA DE NAVEGAÇÃO*/
+
+html, body{
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+body::-webkit-scrollbar {
+  width: 10px;              
+  height: 10px;             
+}
+
+body::-webkit-scrollbar-track {
+  background: #212529;      
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8257E6;
+  border-radius: 20px;      
+  border: 2px solid #212529;
+}
+
+
+
+
+.mode {
+  width: 50px;
+  height: 50px;
+  color: #8257E6;
+}
+
+.navbar-toggler{
+    color: #8257E6;
+    mix-blend-mode: screen;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+
+}
+
+nav.navbar{
+    min-height: 80px;   
+}
+
+ul li .letra{
+    font-size: 1.2em;
+    color: #8257E6;
+    padding: 0px 0px 20px 0px;
+}
+
+.navbar-collapse{
+    
+    position: fixed; /*fixed*/
+    top: 80px;  /*0*/
+    left: -30%; /*0*/
+    width: 30%;  /*100%*/
+    height: 0; /*100vh*/
+    height: calc(100vh - 80px);
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+    background: rgba(0, 0, 0, 2) !important; /*mudar no do maykon(0.4)*/
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+   /* position: fixed; */
+    z-index: 2000;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    
+
+
+}
+
+.nav-link{
+    font-size: 1.2em;
+    margin: 15px 0;
+    transition: 0.1s;
+    width: fit-content;
+    margin-inline: auto;
+    color: white;
+}
+
+.nav-link:hover{
+    color: #8a2be2;
+    transform: scale(1.2);
+
+
+}
+ul li .saida{
+
+    text-decoration: none;
+    float: left;
+    font-size: 25px;
+    color: #8257E6;
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+
+
+/*.navbar-collapse.collapsing {
+    height: 100vh !important; 
+    transition: all 0.2s ease, transform 0.5s ease;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-100%);
+}*/
+
+.navbar-collapse.collapsing {
+    height: 0;
+    display: flex; /* Mantém o flex para não quebrar o layout durante o movimento */
+    overflow: hidden;
+}
+
+.navbar-collapse.show {
+    left: 0 !important;
+    height: calc(100vh - 80px); /* Ocupa o resto da tela descontando a navbar */
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn-fechar {
+    position: absolute; /* Ignora o alinhamento central do pai */
+    top: 30px;          /* Distância do topo */
+    left: 30px;
+    z-index: 2500;        /* Distância da esquerda */
+    font-size: 0.3rem;  /* Tamanho do ícone */
+    color: #8257E6;     /* A cor roxa que você está usando */
+    display: block;     /* Garante que fique acima de tudo */
+}
+
+.btn-fechar i {
+    color: #8257E6 !important;     /* Força a cor roxa no ícone */
+    font-size: 1rem;               /* Deixa o X visível e grande */
+}
+
+/* Isso muda o fundo do botão */
+.btn-fechar:hover {
+    background-color: #8257E6 !important;
+    border-radius: 10px; /* Opcional: deixa o fundo arredondado */
+    
+}
+
+.btn-fechar:hover i {
+    color: black !important;
+
+}
+
+.btn-abrir:hover{
+    background-color: #8257E6 !important;
+    border-radius: 10px;
+}
+
+.btn-abrir:hover i {
+    color: black !important;
+}
+/* Isso muda a cor do ícone X para preto quando o botão recebe hover */
+
+
+/* Remova ou limpe a classe .saida se não for usar, 
+   o segredo aqui é o position: absolute no botão. */
+
+/* Criamos uma camada de vidro atrás do conteúdo do menu */
+.navbar-collapse::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* Aplica o blur apenas nesta camada vazia */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    
+    z-index: -1; /* Fica atrás dos links, mas na frente da sua row */
+}
+
+
+
+/* FIM DA BARRA DE NAVEGAÇÃO*/
+
+/* Cria um espaçamento para o conteúdo não sumir debaixo da navbar */
+section.posicao{
+    padding-top: 200px;
+    color: white; /* Define a cor global do texto como branco */
+}
+
+/* Estiliza o seu nome especificamente */
+section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+section span {
+    color: #8257E6; /* O roxo da sua identidade */
+    font-size: 3.5rem;
+    display: block; /* Faz o nome ficar na linha de baixo do "Olá" */
+}
+
+section p {
+    color:#828282;
+    font-size: 1.1rem;
+}
+
+section button a{
+    text-decoration: none;
+    color: #F9F9F9;
+
+}
+
+section button.btn-um {
+    margin: 7px;
+    background: #7930bea5;
+    border-radius: 20px;
+    padding: 11px;
+    background: linear-gradient(90deg, rgba(130, 87, 230, 0.8) .2%, rgba(121, 48, 190, 0.648) 100%);
+}
+
+section button.btn-dois{
+    color: white;
+    border-radius: 20px;
+    background: #212529;
+    border: 2px solid #7930bea5;
+    padding: 10px;
+}
+
+section button.btn-dois:hover{
+    background: linear-gradient(90deg, rgba(130, 87, 230, 0.8) .100%, rgba(121, 48, 190, 0.648) 2%);
+    transform: scale(0.97);
+    transition: 0.2s;
+
+}
+
+section button.btn-um:hover{
+    background: linear-gradient(90deg, rgba(130, 87, 230, 0.8) .100%, rgba(121, 48, 190, 0.648) 2%);
+    transform: scale(0.97);
+    transition: 0.2s;
+
+}
+
+#titulo, #subtitulo {
+    min-height: 1.2em;
+    display: inline;
+    white-space: pre-wrap;
+}
+
+#subtitulo {
+    color: #828282;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+#titulo {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #8257E6;
+    animation: piscar 0.8s infinite;
+    
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.nome-roxo{
+    color: #8257E6;
+    display: inline-block;
+}
+
+section h1 {
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+#titulo {
+    white-space: normal; /* Permite que o <br> quebre a linha */
+
+}
+
+
+#perfil:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    filter: brightness(1.2);
+}
+
+section p{
+    width: 500px;
+}
+
+/*section h2{
+    margin: 50px 0px 20px 0px;
+}*/
+
+section.posicao {
+    min-height: 550px; /* Ajuste esse valor de acordo com o tamanho final do seu texto */
+    
+}
+
+
+/* FORMATAÇÃO DOS ÍCONES */
+
+
+
+.key{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 3rem;
+    color: #8257E6;
+    flex-wrap: wrap;
+}
+
+.key li{
+    background: #212121;
+    padding: 20px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-start-start-radius: 20px;
+    margin: 30px 40px 0px 0px;
+    border-bottom: 2px solid #8257E6;
+    font-size: 2rem;
+    color: #8257E6;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    letter-spacing: 0.5px;
+
+}
+
+.key li:hover{
+    transform: scale(1.2) !important;
+    transition: 0.3s !important;
+}
+
+.key li span{
+    padding-bottom: 7px;
+    
+}
+
+.key li span{
+    font-size: 15px;
+}
+
+.branco{
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+
+ul li .letra.texte {
+    transition: color 0.3s ease;
+}
+
+
+
+.destaque{
+        color:white;
+        font-size: 1.5rem;
+        /*border-bottom: 3px solid #8257E6;*/
+        display: inline;
+        background-image: linear-gradient(#8257E6, #8257E6);
+        background-size: 75% 3px;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        padding-bottom: 5px;
+}
+
+
+
+
+.projeto-container {
+    position: relative;
+    width: 100%; /* Mesma largura que você definiu para a imagem (40)*/
+    max-width: 350px;
+    margin-top: 50px;
+    border-radius: 20px;
+    overflow: hidden;/* Garante que a cortina respeite o arredondamento */
+    cursor: pointer;
+    
+   
+}
+
+.projeto-container img {
+    width: 100%; /* Agora a imagem ocupa 100% do container */
+    display: block;
+    height: 250px;     /* Opcional: define uma altura fixa para alinhar as imagens */
+    object-fit: cover;
+    background-image: linear-gradient(#8257E6, #8257E6),
+                      linear-gradient(90deg, #8a2be2 0%, #8257E6 100%);
+}
+
+
+
+
+
+.overlay-cortina {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Cor preta com 70% de transparência */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.projeto-wrapper:hover .overlay-cortina {
+    transform: translateY(0px);
+     transform: translateY(-250px);
+    transition: transform 0.5s ease;
+}
+ 
+
+
+
+
+.projeto-container .overlay-cortina {
+    opacity: 1; /* A cortina aparece no hover */
+}
+
+
+
+.texto-projeto {
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+}
+
+
+
+
+/*.projeto-container{
+    float: left;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    
+}*/
+
+
+.projeto-container::after{
+
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #8a2be2, #00D2FF);
+}
+
+.projeto-container::before{
+
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+
+/*---------------------------------------------*/
+
+
+.projeto-wrapper {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease;
+    
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+
+    overflow: visible;
+
+}
+
+body .projeto-wrapper {
+    /* Força a velocidade da volta (quando o mouse sai) */
+    transition: transform 0.2s ease-in-out !important;
+    will-change: transform;
+}
+
+body .projeto-wrapper:hover{
+    transform: scale(1.2) !important;
+    transition: 0.4 ease !important;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+ 
+ body footer li:hover {
+    transform: scale(1.3) !important;
+    transition: 0.4 ease !important;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    
+}
+
+body footer li {
+    /* Força a velocidade da volta no footer */
+    transition: transform 0.2s ease-in-out !important;
+    will-change: transform;
+}
+
+/* Ajuste na imagem para tirar margens extras */
+.projeto-container {
+
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    z-index: 2;
+    
+}
+
+.projeto-wrapper:hover {
+    z-index: 10;
+    position: relative;
+}
+
+
+
+.projeto-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: -10px;
+   
+}
+
+
+.btn-ver-mais {
+    
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: linear-gradient(90deg, rgba(130, 87, 230, 0.8) .2%, rgba(121, 48, 190, 0.648) 100%);
+
+    
+}
+.btn-ver-mais:hover {
+    background: linear-gradient(to right, #8a2be2, #00D2FF);
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+
+
+
+/* Estilo do Rodapé que "sai" para fora */
+.projeto-footer {
+    background-color: #1a1a1a;
+    width: 100%; /* Um pouco menor para dar um efeito elegante */
+    height: 0;
+
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    
+    transition: all 0.4s ease;
+
+    
+}
+
+/* --- O EFEITO DE HOVER --- */
+
+/* Quando passar o mouse no WRAPPER todo */
+.projeto-wrapper:hover .projeto-footer {
+    height: 60px; /* O tamanho da parte preta que vai aparecer */
+    opacity: 1;
+     top: -10px;/* Ajuste fino para encostar na imagem */
+    padding: 10px 0;
+    margin-bottom: -60px;
+}
+
+/* Pequeno ajuste no card para ele subir um pouco quando o botão desce*/
+.projeto-wrapper:hover .projeto-container {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transform: translateY(-5px); /* Opcional: faz o card subir um pouco*/
+
+}
+
+section .listas-projetos{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    line-height: 1.1;
+    /*padding-bottom: 80px;*/
+}
+
+
+/*Modal >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+/* Customização do Modal */
+.modal-content {
+    background-color: #121212 !important; /* Fundo bem escuro */
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(130, 87, 230, 0.2);
+}
+
+#modalDescription {
+    color: #b3b3b3;
+    font-size: 1.05rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Estilo da barra de rolagem interna do modal */
+#modalDescription::-webkit-scrollbar {
+    width: 5px;
+}
+#modalDescription::-webkit-scrollbar-thumb {
+    background: #8257E6;
+    border-radius: 10px;
+}
+
+footer .final{
+    color: #8257E6;
+    font-size: 2.5rem;
+    
+}
+
+footer ul .legenda{
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+
+}
+
+footer ul a{
+    text-decoration: none;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    list-style: none;
+}
+footer li{
+    padding: 80px;
+    
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0px;
+    margin: 50px;
+
+}
+
+
+footer li:hover{
+    transition: 0.3s ease !important;
+    transform: scale(1.2) !important;
+    align-items: flex-start;
+
+}
+
+
+
+.cor{
+    color: #828282;
+}
+
+
+
+
+/*footer li a i {
+    /* Define a cor do ícone 
+    color: #8257E6; 
+    
+    /* Cria o fundo circular 
+    background-color: rgba(82, 82, 82, 0.2); /* Um cinza leve para não cobrir o ícone 
+    border: 2px solid #8257E6; /* Adiciona uma borda com a cor principal 
+    border-radius: 50%; /* Deixa perfeitamente redondo 
+    
+    /* Define o tamanho do círculo 
+    width: 60px;
+    height: 60px;
+    
+    /* Centraliza o ícone dentro do círculo 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin-bottom: 10px;
+
+    font-size: 1.5rem;
+    
+    /* Suaviza a transição no hover 
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* Efeito ao passar o mouse apenas no ícone, se desejar 
+footer li:hover a i {
+    background-color: #8257E6;
+    color: white;
+}*/
+footer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Impede que o scroll do modal vaze para o fundo da página */
+#projetoModal {
+    overscroll-behavior: contain;
+}
+
+/* Força o travamento do corpo da página quando o modal do Bootstrap estiver ativo */
+body.modal-open {
+    overflow: hidden !important;
+}
+
+
+/*--------------------MEDIA QUERIES--------------------*/
+
+
+/*Extra Small devices (landscape phones, 576px and up)*/
+@media (max-width: 575px) { 
+
+    /* Esconde o texto de boas-vindas dentro do menu no mobile */
+  #navtopo .boas-vindas {
+    display: none !important;
+  }
+
+    .projeto-wrapper {
+    width: fit-content !important; /* Faz o container ter exatamente o tamanho do projeto */
+    margin-inline: auto;          /* Centraliza o card na tela do celular */
+    max-width: 90% !important;    /* Evita que o card cole nas bordas físicas do celular */
+  }
+
+    #foto {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza a foto no mobile */
+  }
+
+  .perfil {
+    width: 270px !important;  /* Defina uma largura fixa para o container da foto */
+    height: 270px !important; /* Defina uma altura fixa */
+    margin: 0 auto !important;
+    border-radius: 50%; /* Opcional: se quiser a foto redonda */
+    /* Garanta que o background-image da sua foto esteja aplicado aqui caso use CSS */
+  }
+
+  section p {
+    max-width: 85% !important; 
+    margin-inline: auto;       
+    font-size: 1rem;           
+  }
+
+  #titulo {
+    position: relative;
+    bottom: 50px;
+    font-size: 2.2rem !important;
+    display: block !important;
+    min-height: 110px; /* Ajuste esse valor para o tamanho que seu título ocupa quando cheio */
+  }
+
+#subtitulo {
+    position: relative;
+    bottom: 60px;
+  display: block !important;
+  min-height: 160px; /* Reserva o espaço para o subtítulo não empurrar os botões */
+  font-size:1rem !important;
+}
+
+.btn-um, .btn-dois{
+    transform: scale(1.0);
+    position: relative;
+    bottom: 185px;
+    
+}
+
+.alinhar, .conhecimentos{
+
+    position: relative;
+    bottom: 200px;
+}
+
+.key{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+
+.mobile{
+    position: relative;
+    bottom: 170px;
+}
+
+.projeto-wrapper {
+    max-width: 300px !important; /* Deixa o card levemente menor no mobile para ficar elegante */
+    margin: 0 auto;
+  }
+
+/* Adicione este bloco dentro de cada uma das suas duas Media Queries do mobile */
+
+body .projeto-wrapper:hover {
+    transform: none !important; /* Cancela o zoom de 1.2x do card */
+    transition: none !important; /* Remove o delay da animação para não travar no touch */
+}
+
+.projeto-wrapper:hover .projeto-container {
+    transform: none !important; /* Cancela o leve 'translateY' que empurrava o card para cima */
+}
+
+  .projeto-container {
+    max-width: 300px !important;
+    height: 220px !important; /* Proporção melhor para telas pequenas */
+  }
+
+  .projeto-container img {
+    height: 220px !important;
+  }
+
+  #projetoModal .modal-dialog {
+    max-width: 95% !important; /* Faz a caixa ocupar 85% da largura da tela */
+    margin: 1.75rem auto; 
+    overflow-y: auto !important;     /* Centraliza verticalmente e horizontalmente */
+  }
+
+  #projetoModal .modal-body {
+    padding: 1.5rem !important; /* Reduz um pouco o espaçamento interno para sobrar mais espaço para o conteúdo */
+  }
+
+  #modalTitle {
+    font-size: 1.5rem !important; /* Diminui o título do modal para não quebrar muitas linhas */
+  }
+  
+  #modalDescription {
+    font-size: 0.8rem !important; /* Ajusta o texto da descrição para caber melhor na tela menor */
+  }
+
+  .modal-content {
+    max-height: 85vh; /* Limita o modal a 85% da altura da tela do celular */
+    overflow-y: auto;
+  }
+
+  .navbar-collapse{
+    
+    position: fixed; /*fixed*/
+    top: 80px;  /*0*/
+    left: -30%; /*0*/
+    width: 50%;  /*100%*/
+    height: 0; /*100vh*/
+    height: calc(100vh - 80px);
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+    background: rgba(0, 0, 0, 2) !important; /*mudar no do maykon(0.4)*/
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+   /* position: fixed; */
+    z-index: 2000;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    
+
+
+}
+
+/* --- AJUSTE DO MENU HORIZONTAL (50% DA TELA) --- */
+
+  .navbar-collapse.show {
+    left: 0 !important;
+    width: 100% !important;
+    height: 10vh !important; /* Projeta exatamente 50% da altura da tela */
+    
+    display: flex !important;
+    flex-direction: column !important; /* Mantém a estrutura interna empilhada */
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Alinha os itens (links) na horizontal */
+  .navbar-collapse.show ul.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important; /* Força os links a ficarem lado a lado */
+    justify-content: space-evenly !important; /* Distribui os links igualmente na tela */
+    align-items: center !important;
+    gap: 5px !important; /* Espaçamento controlado entre as opções */
+    
+    width: 100% !important;
+    padding: 0 10px !important; /* Reduz o padding de 50px que você tinha */
+    margin: 0 !important;
+    
+    /* Caso as opções fiquem muito grandes em celulares muito pequenos, 
+       isso cria uma rolagem horizontal suave para os lados automaticamente */
+    overflow-x: hidden; !important; 
+    white-space: nowrap !important; 
+  }
+
+  /* Ajusta o espaçamento dos links para o modo horizontal */
+  .navbar-collapse.show .nav-link {
+    margin: 0 !important; /* Reseta as margens verticais antigas */
+    font-size: 0.85rem !important; /* Deixa a fonte ligeiramente menor para caber melhor */
+    padding: 6px 8px !important;
+  }
+
+  /* Reposiciona o seu botão "X" de fechar para não cobrir os links */
+  .navbar-collapse.show .btn-fechar {
+    top: 15px !important;
+    left: 15px !important;
+  }
+
+/* Remove o botão "X" de fechar no mobile */
+  .navbar-collapse.show .btn-fechar {
+    display: none !important;
+  }
+
+
+/* --- CUSTOMIZAÇÃO DO FOOTER NO MOBILE --- */
+  
+  footer {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+
+
+
+  /* Transforma a lista em uma grade de 2 colunas */
+  footer ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); /* 2 itens por linha igualmente divididos */
+    gap: 25px !important; /* Espaçamento controlado entre os blocos */
+    padding: 0 15px !important;
+    margin: 0 auto !important;
+    max-width: 100%;
+    margin-top: 30px !important;
+  }
+
+  footer li {
+    margin: 0 !important; /* Reseta os 50px de margem que quebravam o layout */
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Centraliza tudo dentro da caixinha */
+    text-align: center !important;
+  }
+  
+
+  
+
+  /* Esconde ou diminui o texto longo (e-mail/link) no mobile para não amassar a tela */
+  footer .cor {
+    font-size: 0.90rem;
+    display: block;
+    max-width: 180px; /* Limita o tamanho para quebrar linha bonitinho se necessário */
+    word-wrap: break-word; /* Força a quebra de texto longo como o e-mail */
+  }
+
+}
+
+/*Small devices*/
+ @media (min-width: 576px) and (max-width: 767px) { 
+
+    html, body{
+        overflow-x: hidden;
+        width: 100vh;
+        margin: 0 auto;
+    }
+
+       /* Esconde o texto de boas-vindas dentro do menu no mobile */
+  #navtopo .boas-vindas {
+    display: none !important;
+  }
+
+    .projeto-wrapper {
+    width: fit-content !important; /* Faz o container ter exatamente o tamanho do projeto */
+    margin-inline: auto;          /* Centraliza o card na tela do celular */
+    max-width: 90% !important;    /* Evita que o card cole nas bordas físicas do celular */
+  }
+
+    #foto {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza a foto no mobile */
+  }
+
+  .perfil {
+    width: 270px !important;  /* Defina uma largura fixa para o container da foto */
+    height: 270px !important; /* Defina uma altura fixa */
+    margin: 0 auto !important;
+    border-radius: 50%; /* Opcional: se quiser a foto redonda */
+    /* Garanta que o background-image da sua foto esteja aplicado aqui caso use CSS */
+  }
+
+  section p {
+    max-width: 85% !important; 
+    margin-inline: auto;       
+    font-size: 1rem;           
+  }
+
+  #titulo {
+    position: relative;
+    bottom: 50px;
+    font-size: 2.2rem !important;
+    display: block !important;
+    min-height: 110px; /* Ajuste esse valor para o tamanho que seu título ocupa quando cheio */
+  }
+
+#subtitulo {
+    position: relative;
+    bottom: 60px;
+  display: block !important;
+  min-height: 160px; /* Reserva o espaço para o subtítulo não empurrar os botões */
+  font-size:1rem !important;
+}
+
+.btn-um, .btn-dois{
+    transform: scale(1.0);
+    position: relative;
+    bottom: 185px;
+}
+
+.alinhar, .conhecimentos{
+
+    position: relative;
+    bottom: 200px;
+}
+
+.key{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+
+.mobile{
+    position: relative;
+    bottom: 170px;
+}
+
+.projeto-wrapper {
+    max-width: 200px !important; /* Deixa o card levemente menor no mobile para ficar elegante */
+    /*margin: 0 auto;*/
+    max-height: 200px;
+    width: calc(50% - 15px) !important;
+           /* Remove a centralização forçada que quebrava o lado a lado */
+    margin-bottom: 50px;
+  }
+
+  .projeto-container {
+    max-width: 100% !important;
+    height: 220px !important; /* Proporção melhor para telas pequenas */
+  }
+
+  body .projeto-wrapper:hover {
+    transform: none !important; /* Cancela o zoom de 1.2x do card */
+    transition: none !important; /* Remove o delay da animação para não travar no touch */
+}
+
+.projeto-wrapper:hover .projeto-container {
+    transform: none !important; /* Cancela o leve 'translateY' que empurrava o card para cima */
+}
+
+  section .listas-projetos {
+        justify-content: center !important; /* Centraliza a linha como um todo */
+    }
+
+  .projeto-container img {
+    height: 220px !important;
+  }
+
+  #projetoModal .modal-dialog {
+    max-width: 95% !important; /* Faz a caixa ocupar 85% da largura da tela */
+    margin: 1.75rem auto; 
+    overflow-y: auto !important;     /* Centraliza verticalmente e horizontalmente */
+  }
+
+  #projetoModal .modal-body {
+    padding: 1.5rem !important; /* Reduz um pouco o espaçamento interno para sobrar mais espaço para o conteúdo */
+  }
+
+  #modalTitle {
+    font-size: 1.5rem !important; /* Diminui o título do modal para não quebrar muitas linhas */
+  }
+  
+  #modalDescription {
+    font-size: 0.8rem !important; /* Ajusta o texto da descrição para caber melhor na tela menor */
+  }
+
+  .modal-content {
+    max-height: 85vh; /* Limita o modal a 85% da altura da tela do celular */
+    overflow-y: auto;
+  }
+  .navbar-collapse{
+    
+    position: fixed; /*fixed*/
+    top: 80px;  /*0*/
+    left: -30%; /*0*/
+    width: 50%;  /*100%*/
+    height: 0; /*100vh*/
+    height: calc(100vh - 80px);
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+    background: rgba(0, 0, 0, 2) !important; /*mudar no do maykon(0.4)*/
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+   /* position: fixed; */
+    z-index: 2000;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    
+
+
+}
+
+/* --- AJUSTE DO MENU HORIZONTAL (50% DA TELA) --- */
+
+  .navbar-collapse.show {
+    left: 0 !important;
+    width: 100% !important;
+    height: 10vh !important; /* Projeta exatamente 50% da altura da tela */
+    
+    display: flex !important;
+    flex-direction: column !important; /* Mantém a estrutura interna empilhada */
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Alinha os itens (links) na horizontal */
+  .navbar-collapse.show ul.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important; /* Força os links a ficarem lado a lado */
+    justify-content: space-evenly !important; /* Distribui os links igualmente na tela */
+    align-items: center !important;
+    gap: 5px !important; /* Espaçamento controlado entre as opções */
+    
+    width: 100% !important;
+    padding: 0 10px !important; /* Reduz o padding de 50px que você tinha */
+    margin: 0 !important;
+    
+    /* Caso as opções fiquem muito grandes em celulares muito pequenos, 
+       isso cria uma rolagem horizontal suave para os lados automaticamente */
+    overflow-x: hidden; !important; 
+    white-space: nowrap !important; 
+  }
+
+  /* Ajusta o espaçamento dos links para o modo horizontal */
+  .navbar-collapse.show .nav-link {
+    margin: 0 !important; /* Reseta as margens verticais antigas */
+    font-size: 0.85rem !important; /* Deixa a fonte ligeiramente menor para caber melhor */
+    padding: 6px 8px !important;
+  }
+
+  /* Reposiciona o seu botão "X" de fechar para não cobrir os links */
+  .navbar-collapse.show .btn-fechar {
+    top: 15px !important;
+    left: 15px !important;
+  }
+
+/* Remove o botão "X" de fechar no mobile */
+  .navbar-collapse.show .btn-fechar {
+    display: none !important;
+  }
+
+
+/* --- CUSTOMIZAÇÃO DO FOOTER NO MOBILE --- */
+  
+  footer {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+
+
+
+  /* Transforma a lista em uma grade de 2 colunas */
+  footer ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); /* 2 itens por linha igualmente divididos */
+    gap: 25px !important; /* Espaçamento controlado entre os blocos */
+    padding: 0 15px !important;
+    margin: 0 auto !important;
+    max-width: 100%;
+    margin-top: 30px !important;
+  }
+
+  footer li {
+    margin: 0 !important; /* Reseta os 50px de margem que quebravam o layout */
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Centraliza tudo dentro da caixinha */
+    text-align: center !important;
+  }
+  
+
+  
+
+  /* Esconde ou diminui o texto longo (e-mail/link) no mobile para não amassar a tela */
+  footer .cor {
+    font-size: 0.90rem;
+    display: block;
+    max-width: 180px; /* Limita o tamanho para quebrar linha bonitinho se necessário */
+    word-wrap: break-word; /* Força a quebra de texto longo como o e-mail */
+  }
+
+ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+
+    .perfil, #foto{
+        width: 300px !important;  /* Defina uma largura fixa para o container da foto */
+        height: 300px !important; /* Defina uma altura fixa */
+        margin: 0 auto !important;
+        border-radius: 50%; /* Opcional: se quiser a foto redonda */
+    /* Garanta que o background-image da sua foto esteja aplicado aqui caso use CSS */
+    }
+
+    #titulo {
+    position: relative;
+    bottom: 50px;
+    font-size: 3rem !important;
+    display: block !important;
+    min-height: 110px; /* Ajuste esse valor para o tamanho que seu título ocupa quando cheio */
+  }
+
+#subtitulo {
+    position: relative;
+    bottom: 60px;
+  display: block !important;
+  min-height: 180px; /* Reserva o espaço para o subtítulo não empurrar os botões */
+  font-size:1rem !important;
+}
+
+.btn-um, .btn-dois{
+    transform: scale(1.0);
+    position: relative;
+    bottom: 185px;
+}
+
+.alinhar, .conhecimentos{
+
+    position: relative;
+    bottom: 200px;
+    margin-top: 80px;
+}
+
+.key{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+
+.mobile{
+    position: relative;
+    bottom: 170px;
+}
+
+.projeto-wrapper {
+    max-width: 200px !important; /* Deixa o card levemente menor no mobile para ficar elegante */
+    /*margin: 0 auto;*/
+    max-height: 200px;
+    width: calc(50% - 15px) !important;
+           /* Remove a centralização forçada que quebrava o lado a lado */
+    margin-bottom: 50px;
+  }
+
+  .projeto-container {
+    max-width: 100% !important;
+    height: 220px !important; /* Proporção melhor para telas pequenas */
+  }
+
+  body .projeto-wrapper:hover {
+    transform: none !important; /* Cancela o zoom de 1.2x do card */
+    transition: none !important; /* Remove o delay da animação para não travar no touch */
+}
+
+.projeto-wrapper:hover .projeto-container {
+    transform: none !important; /* Cancela o leve 'translateY' que empurrava o card para cima */
+}
+
+  section .listas-projetos {
+        justify-content: center !important; /* Centraliza a linha como um todo */
+    }
+
+  .projeto-container img {
+    height: 220px !important;
+  }
+
+  #projetoModal .modal-dialog {
+    max-width: 95% !important; /* Faz a caixa ocupar 85% da largura da tela */
+    margin: 1.75rem auto; 
+    overflow-y: auto !important;     /* Centraliza verticalmente e horizontalmente */
+  }
+
+  #projetoModal .modal-body {
+    padding: 1.5rem !important; /* Reduz um pouco o espaçamento interno para sobrar mais espaço para o conteúdo */
+  }
+
+  #modalTitle {
+    font-size: 1.5rem !important; /* Diminui o título do modal para não quebrar muitas linhas */
+  }
+  
+  #modalDescription {
+    font-size: 0.8rem !important; /* Ajusta o texto da descrição para caber melhor na tela menor */
+  }
+
+  .modal-content {
+    max-height: 85vh; /* Limita o modal a 85% da altura da tela do celular */
+    overflow-y: auto;
+  }
+  .navbar-collapse{
+    
+    position: fixed; /*fixed*/
+    top: 80px;  /*0*/
+    left: -30%; /*0*/
+    width: 50%;  /*100%*/
+    height: 0; /*100vh*/
+    height: calc(100vh - 80px);
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+    background: rgba(0, 0, 0, 2) !important; /*mudar no do maykon(0.4)*/
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+   /* position: fixed; */
+    z-index: 2000;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    
+
+
+}
+
+/* --- AJUSTE DO MENU HORIZONTAL (50% DA TELA) --- */
+
+  .navbar-collapse.show {
+    left: 0 !important;
+    width: 100% !important;
+    height: 10vh !important; /* Projeta exatamente 50% da altura da tela */
+    
+    display: flex !important;
+    flex-direction: column !important; /* Mantém a estrutura interna empilhada */
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Alinha os itens (links) na horizontal */
+  .navbar-collapse.show ul.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important; /* Força os links a ficarem lado a lado */
+    justify-content: space-evenly !important; /* Distribui os links igualmente na tela */
+    align-items: center !important;
+    gap: 5px !important; /* Espaçamento controlado entre as opções */
+    
+    width: 100% !important;
+    padding: 0 10px !important; /* Reduz o padding de 50px que você tinha */
+    margin: 0 !important;
+    
+    /* Caso as opções fiquem muito grandes em celulares muito pequenos, 
+       isso cria uma rolagem horizontal suave para os lados automaticamente */
+    overflow-x: hidden; !important; 
+    white-space: nowrap !important; 
+  }
+
+  /* Ajusta o espaçamento dos links para o modo horizontal */
+  .navbar-collapse.show .nav-link {
+    margin: 0 !important; /* Reseta as margens verticais antigas */
+    font-size: 0.85rem !important; /* Deixa a fonte ligeiramente menor para caber melhor */
+    padding: 6px 8px !important;
+  }
+
+  /* Reposiciona o seu botão "X" de fechar para não cobrir os links */
+  .navbar-collapse.show .btn-fechar {
+    top: 15px !important;
+    left: 15px !important;
+  }
+
+/* Remove o botão "X" de fechar no mobile */
+  .navbar-collapse.show .btn-fechar {
+    display: none !important;
+  }
+
+
+/* --- CUSTOMIZAÇÃO DO FOOTER NO MOBILE --- */
+  
+  footer {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+
+
+
+  /* Transforma a lista em uma grade de 2 colunas */
+  footer ul {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr); /* 2 itens por linha igualmente divididos */
+    gap: 25px !important; /* Espaçamento controlado entre os blocos */
+    padding: 0 15px !important;
+    margin: 0 auto !important;
+    max-width: 100%;
+    margin-top: 30px !important;
+  }
+
+  footer li {
+    margin: 0 !important; /* Reseta os 50px de margem que quebravam o layout */
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Centraliza tudo dentro da caixinha */
+    text-align: center !important;
+  }
+  
+
+  
+
+  /* Esconde ou diminui o texto longo (e-mail/link) no mobile para não amassar a tela */
+  footer .cor {
+    font-size: 0.90rem;
+    display: block;
+    max-width: 180px; /* Limita o tamanho para quebrar linha bonitinho se necessário */
+    word-wrap: break-word; /* Força a quebra de texto longo como o e-mail */
+  }
+
+    
+    .nome-roxo {
+        /* Diminui o tamanho da fonte para não quebrar a tela */
+        font-size: 3rem !important; 
+        
+        /* Se quiser mudar a cor dele nessa tela específica */
+        color: #8257E6 !important; 
+        
+        /* Garante que ele se comporte como um bloco caso queira alinhar */
+        display: inline-block;
+        
+        /* Move o nome ligeiramente para os lados ou para cima/baixo se precisar */
+        margin-left: 0px !important;
+        margin-top: 10px !important;
+    }
+
+    #navtopo .boas-vindas {
+    display: none !important;
+  }
+.navbar-collapse.show .btn-fechar {
+    display: none !important;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px){
+
+    #navtopo .boas-vindas {
+    display: none !important;
+  }
+
+  .navbar-collapse.show .btn-fechar {
+    display: none !important;
+  }
+
+  .projeto-wrapper {
+    max-width: 280px !important; /* Deixa o card levemente menor no mobile para ficar elegante */
+    /*margin: 0 auto;*/
+    max-height: 280px;
+    width: calc(50% - 15px) !important;
+           /* Remove a centralização forçada que quebrava o lado a lado */
+    margin-bottom: 50px;
+  }
+
+  .projeto-container {
+    max-width: 100% !important;
+    height: 220px !important; /* Proporção melhor para telas pequenas */
+  }
+
+  body .projeto-wrapper:hover {
+    transform: none !important; /* Cancela o zoom de 1.2x do card */
+    transition: none !important; /* Remove o delay da animação para não travar no touch */
+}
+
+.projeto-wrapper:hover .projeto-container {
+    transform: none !important; /* Cancela o leve 'translateY' que empurrava o card para cima */
+}
+
+  section .listas-projetos {
+        justify-content: center !important; /* Centraliza a linha como um todo */
+    }
+
+  .projeto-container img {
+    height: 220px !important;
+  }
+
+  #projetoModal .modal-dialog {
+    max-width: 95% !important; /* Faz a caixa ocupar 85% da largura da tela */
+    margin: 1.75rem auto; 
+    overflow-y: auto !important;     /* Centraliza verticalmente e horizontalmente */
+  }
+
+  #projetoModal .modal-body {
+    padding: 1.5rem !important; /* Reduz um pouco o espaçamento interno para sobrar mais espaço para o conteúdo */
+  }
+
+  #modalTitle {
+    font-size: 1.5rem !important; /* Diminui o título do modal para não quebrar muitas linhas */
+  }
+  
+  #modalDescription {
+    font-size: 0.8rem !important; /* Ajusta o texto da descrição para caber melhor na tela menor */
+  }
+
+  .modal-content {
+    max-height: 85vh; /* Limita o modal a 85% da altura da tela do celular */
+    overflow-y: auto;
+  }
+
+}
+
+/*X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+
+
+  
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+
+   
+
+
+}
